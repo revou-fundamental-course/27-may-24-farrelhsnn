@@ -6,122 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farrelhsnn Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
-    
-    <style>
-        .header-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem;
-            background-color: #f8f9fa;
-        }
-
-        .menu {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-item {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            text-align: center; 
-        }
-
-        @media screen and (max-width: 600px) {
-            .header-wrapper {
-                flex-direction: column;
-            }
-
-            .menu {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-
-            .nav-item {
-                width: 100%; 
-                text-align: center; 
-            }
-
-            .logo-icon {
-                margin-bottom: 14px;
-            }
-        }
-    </style>
 </head>
-
-
-
 <body>
     <header>
-        <!-- Navigasi Bar -->
+        <!-- Navigation Bar -->
         <nav class="header-wrapper">
-             <img src="assets/foto profil.jpg" class="logo-icon">
-
+            <img src="assets/foto profil.jpg" alt="Logo" class="logo-icon">
             <div class="menu">
-                  <a class="nav-item" href="#home">Home</a>
-                  <a class="nav-item" href="#facilities">Our Facilities</a>
-                  <a class="nav-item" href="#message-us">Message Us</a>
+                <a class="nav-item" href="#home">Home</a>
+                <a class="nav-item" href="#facilities">Our Facilities</a>
+                <a class="nav-item" href="#message-us">Message Us</a>
             </div>
         </nav>
     </header>
     
-
-
-
     <section class="section-container">
-        <!-- Home -->
+        <!-- Home Section -->
         <section id="home">
             <header>
-                <h1> Hai <span id="sender-name"></span>, selamat datang di webku</h1>
+                <h1>Hai <span id="sender-name"></span>, selamat datang di webku</h1>
             </header>
-
             <article>
                 <p>Ini adalah website pertama saya</p>
-
                 <!-- Banner -->
                 <div class="banner-container">
-                    <!-- <img class="image-slideshow" src="assets/2022.png"> -->
-                    <img class="image-slideshow" src="assets/Torii.jpg">
-                    <img class="image-slideshow" src="assets/2022.jpg">
-                    <img class="image-slideshow" src="assets/Tea Pot.jpg">
-                    <!-- Banner Button -->
+                    <img class="image-slideshow" src="assets/Torii.jpg" alt="Torii">
+                    <img class="image-slideshow" src="assets/2022.jpg" alt="2022">
+                    <img class="image-slideshow" src="assets/Tea Pot.jpg" alt="Tea Pot">
+                    <!-- Banner Buttons -->
                     <div class="banner-button">
                         <button onclick="plusDivs(-1)" class="prev">Previous</button>
                         <button onclick="plusDivs(1)" class="next">Next</button>
+                    </div>
                 </div>
-                    
-                </div>
-
             </article>
         </section>
 
         <hr>
 
-        <!-- Our Facilities -->
+        <!-- Our Facilities Section -->
         <section id="facilities">
             <header>
                 <h1>Our Facilities</h1>
             </header>
-
             <article class="facility-list">
                 <div style="text-align: center;">
-                    <img src="assets/Classroom.jpg" class="facility-icon">
-                    <!-- <div class="facility-icon"></div> -->
+                    <img src="assets/Classroom.jpg" alt="Classroom" class="facility-icon">
                     <h5>Classroom</h5>
                 </div>
-                
                 <div style="text-align: center;">
-                    <img src="assets/Sport Field.jpg" class="facility-icon">
-                    <!-- <div class="facility-icon"></div> -->
+                    <img src="assets/Sport Field.jpg" alt="Sport Field" class="facility-icon">
                     <h5>Sport Field</h5>
                 </div>
-
                 <div style="text-align: center;">
-                    <img src="assets/Library.jpg" class="facility-icon">
-                    <!-- <div class="facility-icon"></div> -->
+                    <img src="assets/Library.jpg" alt="Library" class="facility-icon">
                     <h5>Library</h5>
                 </div>
             </article>
@@ -129,54 +67,42 @@
 
         <hr>
 
-        <!-- Message Us -->
+        <!-- Message Us Section -->
         <section id="message-us">
             <header>
                 <h1>Message Us</h1>
             </header>
-
             <!-- Form -->
             <section class="message-us-section">
-                <section>
-                    <form name="message-form" onsubmit="return validateForm()">
-                        <table>
-                            <tr>
-                                <td>Nama:</td>
-                                <td><input placeholder="Nama" type="text" name="full-name" /></td>
-                            </tr>
-
-                            <tr>
-                            <td>Tanggal Lahir: </td>
-                            <td><input type="date" name="birth-date" /></td>
-                            </tr>
-
-                            <tr>
-                                <td>Jenis Kelamin:</td>
-                                <td>
-                                    <input type="radio" id="Laki-laki" name="gender" value="Laki-laki">
-                                    <label for="Laki-laki">Laki-laki</label>
-                                    <input type="radio" name="gender" id="Perempuan" value="Perempuan">
-                                    <label for="Perempuan">Perempuan</label>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>Pesan:</td>
-                                <td><textarea name="messages" placeholder="Pesan"></textarea></td>
-                            </tr>
+                <form name="message-form" onsubmit="return validateForm()">
+                    <table>
+                        <tr>
+                            <td>Nama:</td>
+                            <td><input type="text" name="full-name" placeholder="Nama"></td>
+                        </tr>
+                        <tr>
+                            <td>Tanggal Lahir:</td>
+                            <td><input type="date" name="birth-date"></td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin:</td>
+                            <td>
+                                <input type="radio" id="Laki-laki" name="gender" value="Laki-laki">
+                                <label for="Laki-laki">Laki-laki</label>
+                                <input type="radio" id="Perempuan" name="gender" value="Perempuan">
+                                <label for="Perempuan">Perempuan</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pesan:</td>
+                            <td><textarea name="messages" placeholder="Pesan"></textarea></td>
+                        </tr>
                         <tr>
                             <td><input type="submit" value="Submit"></td>
                         </tr>
-                         
-                        </table>
-                        
-                        
-                     
-                    </form>
-                    
-                </section>
-
-                <!-- Hasil Form -->
+                    </table>
+                </form>
+                <!-- Form Result -->
                 <section class="result-container">
                     <div class="form-result">
                         <p>Nama: <span id="sender-full-name"></span></p>
@@ -193,7 +119,7 @@
     <script src="js/script.js"></script>
 
     <footer>
-
+        <!-- Footer content -->
     </footer>
 </body>
 </html>

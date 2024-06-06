@@ -1,12 +1,12 @@
-/* Ini css */
-
+/* Navigation Styles */
 nav {
     display: flex;
     justify-content: space-between;
     background-color: aliceblue;
+    padding: 1rem;
 }
 
-nav>div {
+nav > div {
     display: flex;
     align-items: center;
 }
@@ -33,25 +33,29 @@ nav>div {
     border-radius: 8px;
     color: black;
     text-decoration: none;
+    margin: 0 5px;
 }
 
 .section-container {
     background-color: #f8f9fa;
+    padding: 1rem;
 }
 
 .banner-container {
     height: 258px;
-    border: 1px solid black;
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
 }
 
 .facility-list {
     display: flex;
     justify-content: space-around;
+    margin: 1rem 0;
 }
 
-
 .facility-icon {
-    /* border: 1px solid black; */
     height: 75px;
     width: 75px;
     border-radius: 50%;
@@ -59,69 +63,80 @@ nav>div {
     background-repeat: no-repeat;
 }
 
-
 .form-result {
-    /* height: 100px; */
     border: 1px solid black;
+    padding: 1rem;
 }
 
 .message-us-section {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .result-container {
     width: 50%;
 }
 
-.banner-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-}
-
 .image-slideshow {
     width: 100%;
     height: auto;
-    display: none; 
+    display: none;
 }
 
 .image-slideshow:first-child {
-    display: block; 
+    display: block;
 }
 
-.prev {
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
 }
 
-.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.banner-container button:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-
-.banner-container button:nth-child(2) {
+.banner-container .prev {
     left: 0;
 }
 
-.banner-container button:nth-child(3) {
+.banner-container .next {
     right: 0;
 }
 
+.banner-container button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 600px) {
+    .header-wrapper {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo-icon {
+        margin-bottom: 14px;
+    }
+
+    .message-us-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result-container {
+        width: 100%;
+    }
+}

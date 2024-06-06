@@ -1,53 +1,54 @@
-// Ini Javascript
 function validateForm() {
-    const name = document.forms["message-form"]["full-name"].value;
-    const birthdate = document.forms["message-form"]["birth-date"].value;
-    const gender = document.forms["message-form"]["gender"].value;
-    const messages = document.forms["message-form"]["messages"].value;
+    const form = document.forms["message-form"];
+    const name = form["full-name"].value.trim();
+    const birthdate = form["birth-date"].value;
+    const gender = form["gender"].value;
+    const messages = form["messages"].value.trim();
 
-    if (name == "" || birthdate == "" || gender == "" || messages == "") {
-        alert("Tidak boleh ada yang kosong ya!")
+    if (!name || !birthdate || !gender || !messages) {
+        alert("Tidak boleh ada yang kosong ya!");
+        return false;
     }
         
     setSenderUI(name, birthdate, gender, messages);
-
     return false;
 }
 
 function setSenderUI(name, birthdate, gender, messages) {
-    document.getElementById("sender-full-name").innerHTML = name;
-    document.getElementById("sender-name").innerHTML = name;
-    document.getElementById("sender-birth-date").innerHTML = birthdate;
-    document.getElementById("sender-gender").innerHTML = gender;
-    document.getElementById("sender-messages").innerHTML = messages;
+    document.getElementById("sender-full-name").textContent = name;
+    document.getElementById("sender-name").textContent = name;
+    document.getElementById("sender-birth-date").textContent = birthdate;
+    document.getElementById("sender-gender").textContent = gender;
+    document.getElementById("sender-messages").textContent = messages;
 }
 
 function replaceName() {
     let name = prompt("Kenalan yuk! Namamu siapa?");
-    document.getElementById("sender-name").innerHTML = name;
-    
+    if (name) {
+        document.getElementById("sender-name").textContent = name;
+    }
 }
 
 replaceName();
 
-var slideIndex = 1;
-showDivs (slideIndex);
+let slideIndex = 1;
+showDivs(slideIndex);
 
 function plusDivs(n) {
-    showDivs (slideIndex += n);
+    showDivs(slideIndex += n);
 }
 
 function showDivs(n) {
-    var i;
-    var imgList = document.getElementsByClassName("image-slideshow");
-    if (n > imgList.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = imgList.length};
+    let i;
+    const imgList = document.getElementsByClassName("image-slideshow");
+    if (n > imgList.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = imgList.length; }
     for (i = 0; i < imgList.length; i++) {
         imgList[i].style.display = "none";
     }
-    imgList[slideIndex-1].style.display = "block";
+    imgList[slideIndex - 1].style.display = "block";
 }
 
 setInterval(() => {
-    plusDivs(1)
+    plusDivs(1);
 }, 3000);
